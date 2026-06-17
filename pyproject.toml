@@ -1,0 +1,26 @@
+[project]
+name = "jupyter-datafusion-iceberg"
+version = "0.1.0"
+description = "Jupyter + Apache DataFusion + Apache Iceberg demo with native Table Provider"
+requires-python = ">=3.9"
+dependencies = [
+    "apache-airflow>=2.7.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+jupyter = [
+    "pyiceberg[s3fs,datafusion,pyiceberg-core]==0.11.1",
+    "pyarrow>=14.0.0",
+    "pandas>=2.0.0",
+    "matplotlib",
+    "jupyterlab",
+]
+spark = [
+    "pyspark==3.5.6",
+    "apache-airflow-providers-apache-spark==4.11.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
